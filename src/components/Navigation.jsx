@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import CartIcon from './CartIcon'
 
@@ -45,10 +46,13 @@ const Navigation = () => {
                 className="hover:opacity-80 transition-opacity duration-200"
                 aria-label="DjurhuusData - Gå til forsiden"
               >
-                <img 
+                <Image 
                   src="/logo/Logo Dark-trans.png" 
                   alt="DjurhuusData Logo" 
+                  width={200}
+                  height={64}
                   className="max-h-16 w-auto" 
+                  priority
                 />
               </Link>
             </div>

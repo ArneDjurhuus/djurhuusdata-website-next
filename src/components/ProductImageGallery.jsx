@@ -1,6 +1,7 @@
 "use client"
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
+import Image from 'next/image'
 
 const ProductImageGallery = ({ product }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)
@@ -23,9 +24,11 @@ const ProductImageGallery = ({ product }) => {
       {/* Main Image Display */}
       <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
         {images.length > 0 ? (
-          <img
+          <Image
             src={images[selectedImageIndex]?.src}
             alt={images[selectedImageIndex]?.alt}
+            width={500}
+            height={500}
             className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
             onClick={() => {
               // Optional: Add lightbox functionality here
@@ -67,9 +70,11 @@ const ProductImageGallery = ({ product }) => {
               }`}
               aria-label={`Vis billede ${index + 1} af ${images.length}`}
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
+                width={80}
+                height={80}
                 className="w-full h-full object-cover"
               />
             </button>
