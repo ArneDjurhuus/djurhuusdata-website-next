@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
-import { getAllProducts } from "../../data/products";
+import { ProductService } from "../../services/productService";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "Se alle IT-produkter og løsninger fra DjurhuusData - webudvikling, softwareudvikling, API-integration og mere.",
 };
 
-export default function ProductsPage() {
-  const allProducts = getAllProducts();
+export default async function ProductsPage() {
+  const allProducts = await ProductService.getAllProducts();
 
   return (
     <>
