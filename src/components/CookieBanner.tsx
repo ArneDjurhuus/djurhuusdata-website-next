@@ -84,7 +84,7 @@ export default function CookieBanner() {
   return (
     <>
       {/* Backdrop */}
-      <div className="fixed inset-0 bg-black bg-opacity-50 z-40" />
+      <div className="fixed inset-0 backdrop-blur-md bg-black bg-opacity-30 z-40" />
       
       {/* Cookie Banner */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-white shadow-2xl border-t-4 border-blue-600">
